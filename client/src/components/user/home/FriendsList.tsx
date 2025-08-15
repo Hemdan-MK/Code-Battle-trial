@@ -79,6 +79,16 @@ const FriendsList = () => {
         }
     }, [socket, currentUser.id]);
 
+    const handleFriendRemoved = useCallback((data) => {
+        console.log('Friend removed:', data);
+
+        if (socket) {
+            socket.emit('get_friends', { userId: currentUser.id });
+        }
+        setAddFriendStatus({ message: 'Friend removed successfully!', type: 'success' });
+    }, [socket, currentUser.id]);
+
+
     useEffect(() => {
         if (!socket || !currentUser.id) return;
 
@@ -246,7 +256,7 @@ const FriendsList = () => {
             socket.off('friend_removed', handleFriendRemoved);
 
         };
-}, [socket, currentUser.id, currentUser.username, dispatch, handleFriendRemoved]);
+    }, [socket, currentUser.id, currentUser.username, dispatch, handleFriendRemoved]);
 
     // Auto-scroll to bottom when messages change
     useEffect(() => {
@@ -275,8 +285,8 @@ const FriendsList = () => {
         setSelectedFriend(friend);
         console.log("this is it : ");
         console.log(friend);
-        
-        
+
+
         setChatOpen(true);
     }, []);
 
@@ -360,21 +370,14 @@ const FriendsList = () => {
         if (!socket || !friendId) return;
 
         // if (confirm('Are you sure you want to remove this friend?')) {
-            socket.emit('remove_friend', {
-                userId: currentUser.id,
-                friendId: friendId
-            });
+        socket.emit('remove_friend', {
+            userId: currentUser.id,
+            friendId: friendId
+        });
         // }
     }, [socket, currentUser.id]);
 
-    const handleFriendRemoved = useCallback((data) => {
-        console.log('Friend removed:', data);
 
-        if (socket) {
-            socket.emit('get_friends', { userId: currentUser.id });
-        }
-        setAddFriendStatus({ message: 'Friend removed successfully!', type: 'success' });
-    }, [socket, currentUser.id]);
 
     const acceptFriendRequest = useCallback((senderId) => {
         if (!socket || !senderId) return;

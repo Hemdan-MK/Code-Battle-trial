@@ -1,0 +1,1 @@
+{"version":3,"file":"GitHubAuthService.d.ts","sourceRoot":"","sources":["../../../src/services/auth/GitHubAuthService.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,kBAAkB,EAAE,MAAM,2CAA2C,CAAC;AAE/E,qBAAa,iBAAkB,YAAW,kBAAkB;IAClD,YAAY,CAAC,IAAI,EAAE,MAAM,GAAG,OAAO,CAAC,GAAG,CAAC;CAuBjD"}

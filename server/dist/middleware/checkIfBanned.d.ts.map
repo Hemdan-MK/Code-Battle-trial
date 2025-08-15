@@ -1,0 +1,1 @@
+{"version":3,"file":"checkIfBanned.d.ts","sourceRoot":"","sources":["../../src/middleware/checkIfBanned.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,YAAY,EAAE,MAAM,SAAS,CAAC;AAO1D,eAAO,MAAM,aAAa,GAAU,KAAK,OAAO,EAAE,KAAK,QAAQ,EAAE,MAAM,YAAY,4DAiClF,CAAC"}
