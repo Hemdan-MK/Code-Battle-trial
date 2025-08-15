@@ -94,3 +94,18 @@ export interface PaginationOptions {
     sortBy?: keyof User;
     sortOrder?: 'asc' | 'desc';
 }
+
+export interface ProblemStats {
+    total: number;
+}
+
+export interface RewardStats {
+    total: number;
+    claimed: number;
+    active: number;
+    expired: number;
+}
+
+export interface LevelStats {
+    total: number;
+}
